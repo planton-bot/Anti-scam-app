@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lapor Penipuan - AntiScam.ID</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html" class="active">Lapor</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cek-nomor.html">Cek Nomor</a>
+            <a href="login.html" id="navLogin" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- FORM -->
+    <div class="form-container animate-fade-in">
+        <div class="card">
+            <h1 style="font-size:1.5rem; font-weight:700; display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-flag" style="color:var(--accent-red);"></i>
+                Laporkan Penipuan
+            </h1>
+            <p class="text-muted" style="margin-top:4px; font-size:0.9rem;">
+                Isi data sebenar-benarnya. Identitas kamu aman dan terenkripsi.
+            </p>
+
+            <form id="reportForm" style="margin-top:1.5rem;">
+                <div class="form-group">
+                    <label>Jenis Penipuan</label>
+                    <select id="jenis" class="form-control" required>
+                        <option value="">Pilih jenis...</option>
+                        <option value="jual-beli">Jual-Beli Online Palsu</option>
+                        <option value="investasi">Investasi Bodong</option>
+                        <option value="phishing">Phishing / Pencurian Data</option>
+                        <option value="pinjaman">Pinjaman Online Ilegal</option>
+                        <option value="lowongan">Lowongan Kerja Palsu</option>
+                        <option value="others">Lainnya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nomor Rekening / Telepon Pelaku <span class="required">*</span></label>
+                    <input type="text" id="nomorPelaku" class="form-control" 
+                           placeholder="Contoh: 08123456789 atau 1234567890" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Pelaku <span style="color:var(--text-muted); font-weight:400;">(opsional)</span></label>
+                    <input type="text" id="namaPelaku" class="form-control" 
+                           placeholder="Nama yang digunakan pelaku" />
+                </div>
+
+                <div class="form-group">
+                    <label>Deskripsi Kejadian <span class="required">*</span></label>
+                    <textarea id="deskripsi" class="form-control" rows="5" 
+                              placeholder="Ceritakan secara singkat kronologi penipuan..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Bukti <span style="color:var(--text-muted); font-weight:400;">(opsional)</span></label>
+                    <input type="file" id="bukti" class="form-control" accept="image/*" />
+                    <p class="text-muted text-xs" style="margin-top:4px;">
+                        <i class="fas fa-info-circle"></i> Upload screenshot atau bukti pendukung lainnya.
+                    </p>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Kirim Laporan
+                </button>
+
+                <div id="successMessage" class="alert alert-success alert-hidden">
+                    <i class="fas fa-check-circle" style="font-size:1.2rem;"></i>
+                    Laporan berhasil dikirim! Terima kasih sudah membantu memberantas penipuan. 🎉
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+    </footer>
+
+    <script src="js/report.js"></script>
+</body>
+</html>

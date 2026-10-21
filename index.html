@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AntiScam.ID - Lawan Penipuan Digital</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html">Lapor</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="cek-nomor.html">Cek Nomor</a>
+            <!-- Tampilkan hanya untuk Super Admin -->
+            <a href="data-import-export.html" id="importExportLink" style="color:var(--accent-purple);">
+                <i class="fas fa-database"></i> Backup
+            </a>
+            <a href="login.html" id="navLogin" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero animate-fade-in">
+        <h1>
+            Lawan Penipuan Bersama<br />
+            <span class="highlight">AntiScam.ID</span>
+        </h1>
+        <p>
+            Laporkan penipuan, cek nomor mencurigakan, dan lindungi sesama dari kejahatan digital.
+            Bersama kita bisa memberantas sindikat penipuan!
+        </p>
+        <div class="actions">
+            <a href="report.html" class="btn btn-primary">
+                <i class="fas fa-flag"></i> Laporkan Penipuan
+            </a>
+            <a href="cek-nomor.html" class="btn btn-outline">
+                <i class="fas fa-search"></i> Cek Nomor
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+    <div class="stats-grid animate-fade-in" style="animation-delay:0.1s;">
+        <div class="stat-card">
+            <div class="stat-number blue" id="statTotal">0</div>
+            <div class="stat-label">Laporan Masuk</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number green" id="statSelesai">0</div>
+            <div class="stat-label">Kasus Tertangani</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number yellow" id="statNomor">0</div>
+            <div class="stat-label">Nomor Terdaftar</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number red" id="statModus">0</div>
+            <div class="stat-label">Modus Teridentifikasi</div>
+        </div>
+    </div>
+
+    <!-- ===== FITUR ===== -->
+    <div class="features-grid animate-fade-in" style="animation-delay:0.2s;">
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-flag" style="color:var(--accent-blue);"></i></span>
+            <h3>Laporan Anonim</h3>
+            <p>Laporkan penipuan tanpa identitas. Data terenkripsi dan aman.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-database" style="color:var(--accent-green);"></i></span>
+            <h3>Database Publik</h3>
+            <p>Cek nomor rekening atau telepon yang sudah dilaporkan oleh masyarakat.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon"><i class="fas fa-graduation-cap" style="color:var(--accent-purple);"></i></span>
+            <h3>Edukasi & Deteksi</h3>
+            <p>Kenali modus penipuan terbaru agar kamu tidak menjadi korban berikutnya.</p>
+        </div>
+    </div>
+
+    <!-- ===== LAPORAN TERBARU ===== -->
+    <div style="max-width:1100px; margin:0 auto 2rem; padding:0 2rem;">
+        <h2 style="font-size:1.3rem; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:10px;">
+            <i class="fas fa-clock" style="color:var(--accent-blue);"></i>
+            Laporan Terbaru
+        </h2>
+        <div id="recentReports">
+            <!-- Diisi oleh JavaScript -->
+        </div>
+    </div>
+
+    <!-- ===== LEVEL PRIVILEGE INFO ===== -->
+    <div style="max-width:1100px; margin:0 auto 2rem; padding:0 2rem;">
+        <div class="card" style="border-color:rgba(167,139,250,0.15);">
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <i class="fas fa-shield" style="color:var(--accent-purple); font-size:1.5rem;"></i>
+                <div style="flex:1;">
+                    <h4 style="font-weight:600; font-size:0.95rem;">Sistem Privilege</h4>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; font-size:0.8rem;">
+                        <span><span class="badge badge-superadmin">🛡️ Super Admin</span> Akses semua fitur</span>
+                        <span><span class="badge badge-admin">🔐 Admin Premium</span> Lacak & Export</span>
+                        <span><span class="badge badge-staff">👤 Staff</span> Lihat laporan</span>
+                    </div>
+                </div>
+                <a href="login.html" class="btn btn-outline btn-sm">
+                    <i class="fas fa-user"></i> Login
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+        <br />
+        <span style="opacity:0.3; font-size:0.75rem;">#LawakPenipuan #AntiScam</span>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script src="js/main.js"></script>
+</body>
+</html>

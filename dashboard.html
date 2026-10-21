@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - AntiScam.ID</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html">Lapor</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="cek-nomor.html">Cek Nomor</a>
+            <a href="login.html" id="navLogin" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD -->
+    <div style="max-width:1152px; margin:1.5rem auto 2rem; padding:0 1.5rem;">
+        <div class="flex-between flex-wrap" style="margin-bottom:1.25rem;">
+            <h1 style="font-size:1.5rem; font-weight:700; display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-chart-simple" style="color:var(--accent-blue);"></i>
+                Dashboard Laporan
+            </h1>
+            <span id="totalLaporan" style="background:rgba(79,124,255,0.12); color:var(--accent-blue); padding:4px 16px; border-radius:50px; font-size:0.85rem; font-weight:600;">
+                0 Laporan
+            </span>
+        </div>
+
+        <!-- TOOLBAR -->
+        <div class="toolbar">
+            <select id="filterJenis" class="form-control">
+                <option value="semua">Semua Jenis</option>
+                <option value="jual-beli">Jual-Beli Online</option>
+                <option value="investasi">Investasi Bodong</option>
+                <option value="phishing">Phishing</option>
+                <option value="pinjaman">Pinjaman Online</option>
+                <option value="lowongan">Lowongan Kerja</option>
+                <option value="others">Lainnya</option>
+            </select>
+            <input type="text" id="searchNomor" class="form-control" 
+                   placeholder="🔍 Cari nomor rekening / telepon..." />
+            <button id="exportBtn" class="btn btn-success btn-sm">
+                <i class="fas fa-file-export"></i> Export CSV
+            </button>
+            <button id="hapusSemuaBtn" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-can"></i> Hapus Semua
+            </button>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:center; width:40px;">#</th>
+                        <th>Jenis</th>
+                        <th>Nomor Pelaku</th>
+                        <th>Nama</th>
+                        <th style="width:140px;">Tanggal</th>
+                        <th style="width:110px;">Status</th>
+                        <th style="text-align:center; width:90px;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="laporanTableBody">
+                    <tr>
+                        <td colspan="7" style="text-align:center; padding:2.5rem 1rem; color:var(--text-muted);">
+                            <i class="fas fa-inbox" style="font-size:2rem; display:block; margin-bottom:0.5rem; opacity:0.3;"></i>
+                            Belum ada laporan masuk
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

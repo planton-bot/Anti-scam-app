@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AntiScam.ID</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html">Lapor</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cek-nomor.html">Cek Nomor</a>
+            <a href="login.html" class="active" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- LOGIN / REGISTER -->
+    <div class="login-container animate-fade-in">
+        <div class="login-card">
+            <span class="logo"><i class="fas fa-shield-halved"></i></span>
+            <h2 id="formTitle">Masuk</h2>
+            <p class="subtitle" id="formSubtitle">Masuk ke akun admin AntiScam.ID</p>
+
+            <!-- Toggle Mode -->
+            <div class="auth-toggle">
+                <button id="btnLogin" class="btn btn-primary btn-sm">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <button id="btnRegister" class="btn btn-outline btn-sm">
+                    <i class="fas fa-user-plus"></i> Register
+                </button>
+            </div>
+
+            <form id="authForm">
+                <!-- Username (Register) -->
+                <div class="form-group" id="usernameGroup" style="display:none;">
+                    <label>Username</label>
+                    <input type="text" id="regUsername" class="form-control" placeholder="Pilih username" />
+                </div>
+
+                <!-- Email / Username (Login) -->
+                <div class="form-group" id="loginGroup">
+                    <label>Email / Username</label>
+                    <input type="text" id="loginEmail" class="form-control" placeholder="Masukkan email atau username" />
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="authPassword" class="form-control" placeholder="Masukkan password" />
+                </div>
+
+                <!-- Confirm Password (Register) -->
+                <div class="form-group" id="confirmGroup" style="display:none;">
+                    <label>Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Ulangi password" />
+                </div>
+
+                <button type="submit" id="authSubmit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> <span id="btnText">Masuk</span>
+                </button>
+            </form>
+
+            <div class="register-link" id="toggleLink">
+                Belum punya akun? <a href="#" id="toggleAuth">Daftar sekarang</a>
+            </div>
+
+            <!-- Informasi Akun Default -->
+            <div class="admin-info">
+                <i class="fas fa-info-circle" style="color:var(--accent-blue);"></i>
+                <strong>Akun Default:</strong><br />
+                <code>admin</code> / <code>admin123</code> &nbsp;|&nbsp; 
+                <code>antiscam</code> / <code>scam123</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

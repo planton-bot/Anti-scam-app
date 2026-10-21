@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Admin - AntiScam.ID</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html">Lapor</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cek-nomor.html">Cek Nomor</a>
+            <a href="kelola-admin.html" class="active">Kelola Admin</a>
+            <a href="data-import-export.html" style="color:var(--accent-purple);">
+                <i class="fas fa-database"></i> Backup
+            </a>
+            <a href="login.html" id="navLogin" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div style="max-width:900px; margin:1.5rem auto 2rem; padding:0 1.5rem;">
+        <div class="flex-between flex-wrap" style="margin-bottom:1.25rem;">
+            <h1 style="font-size:1.5rem; font-weight:700; display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-users-cog" style="color:var(--accent-purple);"></i>
+                Kelola Admin
+            </h1>
+            <span style="color:var(--text-muted); font-size:0.85rem;">
+                <i class="fas fa-shield"></i> Super Admin Only
+            </span>
+        </div>
+
+        <!-- Tambah Admin -->
+        <div class="card" style="margin-bottom:1.5rem;">
+            <h3 style="font-weight:600; font-size:1.1rem; margin-bottom:0.75rem;">
+                <i class="fas fa-user-plus" style="color:var(--accent-blue);"></i> Tambah Admin
+            </h3>
+            <form id="tambahAdminForm" style="display:flex; flex-wrap:wrap; gap:10px;">
+                <input type="text" id="newUsername" class="form-control" placeholder="Username" style="flex:1; min-width:140px;" required />
+                <input type="password" id="newPassword" class="form-control" placeholder="Password" style="flex:1; min-width:140px;" required />
+                <select id="newRole" class="form-control" style="flex:0 1 auto; min-width:140px;">
+                    <option value="staff">👤 Staff</option>
+                    <option value="admin">🔐 Admin Premium</option>
+                    <option value="superadmin">🛡️ Super Admin</option>
+                </select>
+                <button type="submit" class="btn btn-primary" style="flex-shrink:0;">
+                    <i class="fas fa-plus"></i> Tambah
+                </button>
+            </form>
+        </div>
+
+        <!-- Daftar Admin -->
+        <div class="card">
+            <h3 style="font-weight:600; font-size:1.1rem; margin-bottom:0.75rem;">
+                <i class="fas fa-list" style="color:var(--accent-blue);"></i> Daftar Admin
+            </h3>
+            <div class="table-container admin-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Level</th>
+                            <th>Dibuat</th>
+                            <th style="text-align:center;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                        <tr>
+                            <td colspan="5" style="text-align:center; padding:2rem; color:var(--text-muted);">
+                                <i class="fas fa-spinner fa-spin"></i> Memuat data...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/kelola-admin.js"></script>
+</body>
+</html>

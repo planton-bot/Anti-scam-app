@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek Nomor - AntiScam.ID</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <i class="fas fa-shield-halved icon"></i>
+            Anti<span class="highlight">Scam</span>.ID
+        </a>
+        <div class="navbar-links">
+            <a href="index.html">Beranda</a>
+            <a href="report.html">Lapor</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="cek-nomor.html" class="active">Cek Nomor</a>
+            <a href="login.html" id="navLogin" style="color:var(--accent-blue);">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- CEK NOMOR -->
+    <div style="max-width:768px; margin:2rem auto; padding:0 1.5rem;">
+        <div class="card animate-fade-in">
+            <h1 style="font-size:1.5rem; font-weight:700; display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-search" style="color:var(--accent-blue);"></i>
+                Cek Nomor Mencurigakan
+            </h1>
+            <p class="text-muted" style="margin-top:4px; font-size:0.9rem;">
+                Masukkan nomor rekening atau telepon untuk mengecek apakah sudah dilaporkan sebagai penipuan.
+            </p>
+
+            <form id="cekForm" style="margin-top:1.5rem; display:flex; gap:10px; flex-wrap:wrap;">
+                <input type="text" id="nomorCari" class="form-control" 
+                       placeholder="Contoh: 08123456789 atau 1234567890" 
+                       style="flex:1; min-width:200px;" required />
+                <button type="submit" class="btn btn-primary" style="flex-shrink:0;">
+                    <i class="fas fa-search"></i> Cek
+                </button>
+            </form>
+
+            <div id="hasilCek"></div>
+        </div>
+
+        <!-- Tips -->
+        <div class="card" style="margin-top:1.5rem; border-color:rgba(251,191,36,0.2);">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+                <i class="fas fa-lightbulb" style="color:var(--accent-yellow); font-size:1.5rem; margin-top:2px;"></i>
+                <div>
+                    <h4 style="font-weight:600; font-size:1rem;">Tips Aman</h4>
+                    <ul style="color:var(--text-secondary); font-size:0.9rem; list-style:none; padding:0; margin-top:4px;">
+                        <li style="padding:4px 0;">✅ Jangan pernah transfer ke rekening yang tidak jelas</li>
+                        <li style="padding:4px 0;">✅ Cek nomor ini sebelum bertransaksi</li>
+                        <li style="padding:4px 0;">✅ Laporkan jika menemukan nomor mencurigakan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 <a href="index.html">AntiScam.ID</a> — Dibangun untuk memberantas penipuan digital.
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/cek-nomor.js"></script>
+</body>
+</html>
